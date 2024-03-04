@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage";
 import TodoListPage from "./pages/TodoListPage";
 import useAuth from "./hooks/useAuth";
 import ErrorPage from "./pages/ErrorPage";
+import CreateTodo from "./pages/CreateTodo";
+import UpdateTodo from "./pages/UpdateTodo";
 
 function App() {
   const { user } = useAuth();
@@ -28,6 +30,8 @@ function App() {
         >
           <Route path="/" element={<HomePage />} />
           <Route path="/todo-list" element={<TodoListPage />} />
+          <Route path="/todo-list/add" element={<CreateTodo />} />
+          <Route path="/todo-list/edit/:id" element={<UpdateTodo />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" />} />
